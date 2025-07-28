@@ -1,10 +1,11 @@
 :root {
-  --purple-color: #8A4C7D;
-  --pink-color: #FD969C;
-  --gold-color: #E4DB7C;
+  --purple-color: #8a4c7d;
+  --pink-color: #fd969c;
+  --gold-color: #e4db7c;
   --font-color: #ffffff;
   --secondaryFont-color: #000;
-  --green: #4bb543;
+  --success: oklch(68.943% 0.0828 142.206);
+  --danger: oklch(0.7 0.08 30);
 }
 * {
   box-sizing: border-box;
@@ -89,7 +90,7 @@ header::before {
   transform: skew(144deg, 28deg);
   border-radius: 50%;
   z-index: -2;
-} 
+}
 header::after {
   content: "";
   position: absolute;
@@ -100,7 +101,7 @@ header::after {
   top: -58px;
   border-radius: 50%;
   z-index: -3;
-} 
+}
 header .button.back {
   position: relative;
 }
@@ -119,17 +120,19 @@ header .button.back::before {
 .info {
   margin-top: 1rem;
 }
+
 footer div {
   position: relative;
   font-weight: bold;
 }
-footer div:hover, .button:hover {
+footer div:hover,
+.button:hover {
   transform: translate(0.5px, 0.5px);
   cursor: pointer;
 }
 footer div::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 110%;
   height: 9px;
   bottom: 0;
@@ -142,10 +145,17 @@ footer div::after {
   padding: 1rem;
   position: absolute;
   bottom: 1rem;
-  background-color: var(--green);
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   left: 1rem;
   color: white;
+}
+.success {
+  color: var(--success);
+  background-color: var(--success);
+}
+.failure {
+  color: var(--danger);
+  background-color: var(--danger);
 }
 .login-message {
   position: absolute;
